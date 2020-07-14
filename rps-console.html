@@ -4,22 +4,23 @@
 </head>
 <body>
     <script>
-        let options = ['rock', 'paper', 'scissors'];
+        let options = ['rock', 'paper', 'scissor'];
         function computerPlay() {
             let rand = Math.floor(Math.random() * (options.length));
             return options[rand];
             
         }
 
-        let playerSelection = 'rock';
+        let inputString = prompt('What is your selection? (rock / paper / scissor)');
+        let playerSelection = inputString.toLowerCase();
         let computerSelection = computerPlay();
         let result = ''; 
 
         function playRound(playerSelection, computerSelection) {
 
-            if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
+            if ((playerSelection === 'rock' && computerSelection === 'scissor') || (playerSelection === 'scissor' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
                 result = 'Player has won!';
-            } else if ((playerSelection === 'scissors' && computerSelection === 'rock') || (playerSelection === 'paper' && computerSelection === 'scissors') || (playerSelection === 'rock' && computerSelection === 'paper')) {
+            } else if ((playerSelection === 'scissor' && computerSelection === 'rock') || (playerSelection === 'paper' && computerSelection === 'scissor') || (playerSelection === 'rock' && computerSelection === 'paper')) {
                 result = 'Computer has Won!';
             } else result = 'It\'s a draw'; 
 
